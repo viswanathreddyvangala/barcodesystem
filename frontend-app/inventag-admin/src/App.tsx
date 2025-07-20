@@ -39,9 +39,13 @@ function App() {
       JsBarcode(barcodeRef.current, `https://barcodesystem.onrender.com/api/itemdetails/${item.id}`, {
         format: 'CODE128',
         displayValue: false,
-        width: 2,
-        height: 40,
+        width: 1.5,
+        height: 30,
+        margin: 0,
       });
+      // Set canvas size explicitly for consistent display
+      barcodeRef.current.width = 180;
+      barcodeRef.current.height = 40;
     }
   };
 
