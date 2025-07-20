@@ -33,15 +33,14 @@ function App() {
       alert('Error: ' + (err instanceof Error ? err.message : String(err)));
     }
   };
-
   const generateBarcode = () => {
     if (barcodeRef.current && item.id) {
-      JsBarcode(barcodeRef.current, `https://barcodesystem.onrender.com/api/itemdetails/${item.id}`, {
+      JsBarcode(barcodeRef.current, `https://barcodesystem-i6oz.onrender.com/api/${item.id}`, {
         format: 'CODE128',
-        displayValue: false,
-        width: 100,
-        height: 30,
-        margin: 0,
+        displayValue: false,     // ✅ hides the text below the barcode
+        width: 1,                // 🔽 makes the bars thinner
+        height: 20,              // 🔽 reduces the height of the barcode
+        margin: 2               // 🧩 adds small padding around the barcode
       });
     }
   };
