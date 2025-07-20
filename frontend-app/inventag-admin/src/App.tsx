@@ -36,7 +36,7 @@ function App() {
 
   const generateBarcode = () => {
     if (barcodeRef.current && item.id) {
-      JsBarcode(barcodeRef.current, item.id, {
+      JsBarcode(barcodeRef.current, `https://barcodesystem.onrender.com/api/itemdetails/${item.id}`, {
         format: 'CODE128',
         displayValue: false,
         width: 2,
