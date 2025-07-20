@@ -19,7 +19,7 @@ function App() {
   // Login handler
   const handleLogin = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch('https://barcodesystem.onrender.com/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
@@ -51,7 +51,7 @@ function App() {
 
   const handleSave = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/items', {
+      const res = await fetch('https://barcodesystem.onrender.com/api/items', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

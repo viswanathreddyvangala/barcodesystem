@@ -18,7 +18,7 @@ function ItemDetail() {
 
   useEffect(() => {
     if (!id) return;
-    fetch(`http://localhost:5000/api/items/${id}`,{
+    fetch(`https://barcodesystem.onrender.com/api/items/${id}`,{
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`,
