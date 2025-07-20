@@ -14,7 +14,7 @@ function ItemDetail() {
   const [item, setItem] = useState<Item | null>(null);
   const [error, setError] = useState('');
   const barcodeRef = useRef<HTMLCanvasElement>(null);
-  const [token, setToken] = useState(localStorage.getItem('jwtToken') || '');
+  const [token] = useState(localStorage.getItem('jwtToken') || '');
 
   useEffect(() => {
     if (!id) return;
