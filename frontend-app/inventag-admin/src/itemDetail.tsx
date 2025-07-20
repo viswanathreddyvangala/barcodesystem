@@ -19,26 +19,26 @@ function ItemDetail() {
   useEffect(() => {
     if (!id) return;
     fetch(`https://barcodesystem.onrender.com/api/items/${id}`,{
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        }
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
       .then(res => {
-        if (!res.ok) throw new Error('Item not found');
-        return res.json();
+      if (!res.ok) throw new Error('Item not found');
+      return res.json();
       })
       .then(data => {
-        setItem(data);
-        if (barcodeRef.current) {
-          JsBarcode(barcodeRef.current, data.id, {
-            format: 'CODE128',
-            displayValue: true,
-            width: 2,
-            height: 40,
-          });
-        }
+      setItem(data);
+      if (barcodeRef.current) {
+        JsBarcode(barcodeRef.current, data.id, {
+        format: 'CODE128',
+        displayValue: true,
+        width: 2,
+        height: 40,
+        });
+      }
       })
       .catch(err => setError(err.message));
   }, [id]);
