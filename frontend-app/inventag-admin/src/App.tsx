@@ -127,7 +127,7 @@ function App() {
   return (
     <div className="container">
       <img src={logo} alt="InvenTag Logo" className="logo" />
-      <h1>InvenTag Admin Panel</h1>
+      <h1>Barcode Prints</h1>
 
       {!token ? (
         <div>
